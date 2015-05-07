@@ -37,23 +37,25 @@ $active_routes = $this->routes[$method];
 	print($pattern . '</br>');
 }*/
 
+$t = 0;
 foreach ($active_routes as $pattern => $callback){
- if ((preg_match_all("/$pattern/", $uri, $matches)) != false) {
-	if ($callback == 'profile_memberName'){
-		//print('blah blah </br>');
-		$profName = explode('/', $uri);
-		$callback($profName);
-		break;
-	}
+	if ((preg_match_all("/$pattern/", $uri, $matches)) != false) {
+		if ($callback == 'profile_memberName'){
+			//print('blah blah </br>');
+			$profName = explode('/', $uri);
+			$t++;
+			$callback($profName);
+			break;
+		}
+	$t++;
 	$callback();
 	break;
-      }
-	  elseif ((preg_match_all("/$pattern/", $uri, $matches)) == false){
-	  print('Route doesn\'t exist');
-	  break;
-	  }
-      //$matches = array();
-    }
+	}
+	//$matches = array();
+	}
+	if ($t == 0){
+		print('Route doesn\'t exist</br>');
+	}
  }
 }
 ?>
