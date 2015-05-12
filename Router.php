@@ -40,11 +40,10 @@ $active_routes = $this->routes[$method];
 $t = 0;
 foreach ($active_routes as $pattern => $callback){
 	if ((preg_match_all("/$pattern/", $uri, $matches)) != false) {
-		if ($callback == 'profile_memberName'){
-			//print('blah blah </br>');
-			$profName = explode('/', $uri);
+		if (count($matches)>1){
+			//print(count($matches) . '</br>');
+			call_user_func_array($callback, array($matches));
 			$t++;
-			$callback($profName);
 			break;
 		}
 	$t++;
