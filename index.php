@@ -14,7 +14,14 @@ function home(){
 }
 
 function profile_memberName($profName){
-	print('I\'m viewing ' . $profName[2] . '\'s profile.');
+	print('I\'m viewing ' . $profName[1][0] . '\'s profile.');
+}
+function itr ($prSur){
+	print($prSur[1][0]. '\'s sur=' . $prSur[2][0]);
+}
+
+function abr ($matches){
+	print('d=' . $matches[2][0] . '</br>f=' . $matches[3][0]);
 }
 
 function contact_us(){
