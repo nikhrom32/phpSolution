@@ -5,6 +5,8 @@ $r = Router::Instances();
 //$r->get('^\/profile\/(\d+)$', 'profile_view');
 //$r->get('^\/profile\/(\:[^0-9]*)$', 'profile_memberName');
 $r->get('\/profile\/([^\/]+)$', 'profile_memberName');
+$r->get('\/profile\/([^\/]+)\/sur=([^=]+)$', 'itr');
+$r->get('\/profile\/([^\/]+)\/d=([^=]+)\/f=([^=]+)$', 'abr');
 
 
 //$r->post('^\/profile\/(\d+)\/sum$', 'profile_sum');
