@@ -16,12 +16,14 @@ function home(){
 function profile_memberName($profName){
 	print('I\'m viewing ' . $profName[1][0] . '\'s profile.');
 }
-function itr ($prSur){
-	print($prSur[1][0]. '\'s sur=' . $prSur[2][0]);
+function itr ($prof, $prSur){
+	//print(count($prSur) . '</br>');
+	print($prof. '\'s sur=' . $prSur);
 }
 
-function abr ($matches){
-	print('d=' . $matches[2][0] . '</br>f=' . $matches[3][0]);
+function abr ($c, $d, $f){
+	//print(count($matches) . '</br>');
+	print('d=' . $d . '</br>f=' . $f);
 }
 
 function contact_us(){
