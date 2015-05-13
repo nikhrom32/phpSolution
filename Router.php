@@ -41,6 +41,12 @@ $t = 0;
 foreach ($active_routes as $pattern => $callback){
 	if ((preg_match_all("/$pattern/", $uri, $matches)) != false) {
 		if (count($matches)>1){
+			foreach($matches as $k => $a){
+				if ($k != 0){
+					$bufAr[$k-1] = $a[0];
+				}
+			}
+			//var_dump($bufAr);
 			//print(count($matches) . '</br>');
 			call_user_func_array($callback, array($matches));
 			$t++;
