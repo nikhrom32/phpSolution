@@ -48,7 +48,7 @@ foreach ($active_routes as $pattern => $callback){
 			}
 			//var_dump($bufAr);
 			//print(count($matches) . '</br>');
-			call_user_func_array($callback, array($matches));
+			call_user_func_array($callback, $bufAr);
 			$t++;
 			break;
 		}
